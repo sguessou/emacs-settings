@@ -59,4 +59,7 @@
 (global-set-key (kbd "M-x") 'smex)
 
 ;; projectile everywhere!
-(projectile-global-mode)
+;;(projectile-global-mode)
+
+
+

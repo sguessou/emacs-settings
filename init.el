@@ -137,9 +137,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(coffee-tab-width 2)
+ '(global-eldoc-mode nil)
  '(package-selected-packages
-   (quote
-    (avy ace-window magit tagedit rainbow-delimiters projectile smex ido-completing-read+ cider clojure-mode-extra-font-locking clojure-mode paredit exec-path-from-shell))))
+   '(go-autocomplete go-mode restclient-test helm-projectile ivy helm-core helm-mode-manager ## avy ace-window magit tagedit rainbow-delimiters projectile smex ido-completing-read+ cider clojure-mode-extra-font-locking clojure-mode paredit exec-path-from-shell))
+ '(safe-local-variable-values
+   '((cider-clojure-cli-global-options . "-A:dev:test:eastwood"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -170,11 +172,6 @@
 (global-flycheck-mode)
 
 
-(require 'multiple-cursors)
-
-(global-unset-key (kbd "M-<down-mouse-1>"))
-(global-set-key (kbd "M-<mouse-1>") 'mc/add-cursor-on-click)
-
 (global-aggressive-indent-mode 1)
 
 
@@ -182,6 +179,72 @@
 
 (require 'ace-window)
 
+
 (global-set-key (kbd "M-o") 'ace-window)
+
+(setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+
+(require 'projectile)
+
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
+(require 'helm-projectile)
+(helm-projectile-on)
+
+(setq projectile-switch-project-action #'projectile-dired)
+
+(setq projectile-completion-system 'ivy)
+
+(setq projectile-project-search-path '("~/posti-stuff/mobile-backend" "~/go-code/client"))
+
+(setq projectile-switch-project-action #'projectile-find-dir)
+
+(setq projectile-find-dir-includes-top-level t)
+
+(setq projectile-indexing-method 'hybrid)
+
+(require 'restclient)
+
+;; Go configuration
+;; function for loading the PATH environment
+;; courtesy of: https://tleyden.github.io/blog/2014/05/22/configure-emacs-as-a-go-editor-from-scratch/
+
+(defun set-exec-path-from-shell-PATH ()
+  (let ((path-from-shell (replace-regexp-in-string
+                          "[ \t\n]*$"
+                          ""
+                          (shell-command-to-string "$SHELL --login -i -c 'echo $PATH'"))))
+    (setenv "PATH" path-from-shell)
+    (setq eshell-path-env path-from-shell) ; for eshell users
+    (setq exec-path (split-string path-from-shell path-separator))))
+
+(when window-system (set-exec-path-from-shell-PATH))
+
+;; GOPATH
+(setenv "GOPATH" "/home/saadg/go-code")
+
+;; Call gofmt on save and set key bindings fo Godef
+(add-to-list 'exec-path "/home/saadg/go-code/bin")
+
+(defun my-go-mode-hook ()
+                                        ; Call gofmt before saving
+  (add-hook 'before-save-hook 'gofmt-before-save)
+                                        ;(local-set-key (kbd "M-.") 'godef-jump)
+  (local-set-key (kbd "M-*") 'pop-tag-mark)
+  )
+(add-hook 'go-mode-hook 'my-go-mode-hook)
+
+;; Go autocomplete
+(defun auto-complete-for-go ()
+  (auto-complete-mode 1))
+(add-hook 'go-mode-hook 'auto-complete-for-go)
+
+(with-eval-after-load 'go-mode
+  (require 'go-autocomplete))
+
+
+
+
 
 ;;init.el ends here
