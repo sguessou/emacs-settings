@@ -8,7 +8,8 @@
 (menu-bar-mode -1)
 
 ;; Show line numbers
-(global-linum-mode)
+;;(global-linum-mode)
+(global-display-line-numbers-mode)
 
 ;; You can uncomment this to remove the graphical toolbar at the top. After
 ;; awhile, you won't need the toolbar.
@@ -26,7 +27,7 @@
 ;; for a more technical explanation.
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (add-to-list 'load-path "~/.emacs.d/themes")
-(load-theme 'tomorrow-night-bright t)
+(load-theme 'spacemacs-dark t)
 
 ;; increase font size for better readability
 (set-face-attribute 'default nil :height 140)
@@ -38,23 +39,23 @@
 
 ;; These settings relate to how emacs interacts with your operating system
 (setq ;; makes killing/yanking interact with the clipboard
-      x-select-enable-clipboard t
+ x-select-enable-clipboard t
 
-      ;; I'm actually not sure what this does but it's recommended?
-      x-select-enable-primary t
+ ;; I'm actually not sure what this does but it's recommended?
+ x-select-enable-primary t
 
-      ;; Save clipboard strings into kill ring before replacing them.
-      ;; When one selects something in another program to paste it into Emacs,
-      ;; but kills something in Emacs before actually pasting it,
-      ;; this selection is gone unless this variable is non-nil
-      save-interprogram-paste-before-kill t
+ ;; Save clipboard strings into kill ring before replacing them.
+ ;; When one selects something in another program to paste it into Emacs,
+ ;; but kills something in Emacs before actually pasting it,
+ ;; this selection is gone unless this variable is non-nil
+ save-interprogram-paste-before-kill t
 
-      ;; Shows all options when running apropos. For more info,
-      ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Apropos.html
-      apropos-do-all t
+ ;; Shows all options when running apropos. For more info,
+ ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Apropos.html
+ apropos-do-all t
 
-      ;; Mouse yank commands yank at point instead of at click.
-      mouse-yank-at-point t)
+ ;; Mouse yank commands yank at point instead of at click.
+ mouse-yank-at-point t)
 
 ;; No cursor blinking, it's distracting
 (blink-cursor-mode 0)
@@ -67,3 +68,6 @@
 
 ;; no bell
 (setq ring-bell-function 'ignore)
+
+(setq tab-width 4)
+

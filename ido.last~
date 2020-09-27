@@ -1,0 +1,140 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/saadg/.local/share/" . "applications/")
+ ("/home/saadg/.local/" . "share/")
+ ("/home/saadg/.ipython/profile_default/" . "startup/")
+ ("/home/saadg/.ipython/" . "profile_default/")
+ ("/home/saadg/python-stuff/" . "tornado01/")
+ ("/home/saadg/omaposti/omaposti-auth-service/config/" . "nginx/")
+ ("/home/saadg/omaposti/omaposti-auth-service/" . "config/")
+ ("/home/saadg/omaposti/mobile-backend/" . "graphql-apigw/")
+ ("/home/saadg/omaposti/" . "omaposti-auth-service/")
+ ("/home/saadg/golang-stuff/golang-arch/" . ".git/")
+ ("/home/" . "saadg/")
+ ("/home/saadg/golang-stuff/" . "golang-arch/")
+ ("/home/saadg/.emacs.d/" . "themes/")
+ ("/home/saadg/" . ".local/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/saadg/.local/share/applications/"
+ "/home/saadg/.emacs.d/customizations/"
+ "/home/saadg/.emacs.d/"
+ "/home/saadg/.ipython/profile_default/startup/"
+ "/home/saadg/omaposti/omaposti-auth-service/config/nginx/"
+ "/home/saadg/omaposti/omaposti-auth-service/config/env/"
+ "/home/saadg/omaposti/omaposti-auth-service/config/docker/"
+ "/home/saadg/omaposti/omaposti-auth-service/bin/"
+ "/home/saadg/.nginx/"
+ "/home/saadg/"
+ "/home/saadg/golang-stuff/golang-arch/.git/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "Postman.desktop"
+ "ui.el"
+ "6502-mode.el"
+ "shell-integration.el"
+ "setup-js.el"
+ "navigation.el"
+ "ace-window.el"
+ "misc.el"
+ "editing.el"
+ "init.el"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/saadg/.local/share/applications/" (24432 16926 856973 312000) "mimeinfo.cache" "../" "./" "chrome-fhbjgbiflinjbdggehcddcbncdddomop-Default.desktop" "mimeapps.list" "chrome-hgmloofddffdnphfgcellkdfbfbjeloo-Default.desktop" "chrome-aapocclcgogkmnckokdopfmhonfmgoek-Default.desktop")
+
+ ("/home/saadg/.local/share/" (24432 17282 447748 103000) "sounds/" "session_migration-ubuntu" "icons/" "icc/" "../" "./" "ibus-table/" "fonts/" "applications/" "evolution/" "jupyter/" "vlc/" "gvfs-metadata/" "Trash/" "man/" "gstreamer-1.0/" "nano/" "flatpak/" "tracker/" "desktop-directories/" "gnome-shell/" "webkitgtk/" "virtualenv/" "nautilus/" "keyrings/" "backgrounds/" "recently-used.xbel" "gnome-settings-daemon/")
+
+ ("/home/saadg/.local/" (24429 34306 584933 915000) "../" "./" "bin/" "etc/" "share/" "lib/")
+
+ ("/home/saadg/" (24432 16263 75394 91000) "spacemacs-light-theme.el" "nginx-stuff/" "Desktop/" "ArchLinuxARM-rpi-2-latest.tar.gz" "go/" "lisp-stuff/" ".profile" ".clojure/" ".pylint.d/" ".cache/" "auth-py-venv/" ".nix-channels" "../" ".ngix/" "./" ".gnupg/" ".npm/" "Templates/" ".sudo_as_admin_successful" ".vscode/" ".mozilla/" ".ssh/" ".bash_logout" "test-venv/" ".cert/" ".bashrc" ".m2/" ".jupyter/" "Music/" "omaposti/" ".ipython/" ".jokerd/" ".nv/" ".nix-profile/" ".zcompdump-saadg-lambda-5.8" ".python_history" ".emacs.d.pre-prelude.tar" ".oh-my-zsh/" "Documents/" "Pictures/" ".zshrc" "snap/" "root/" ".emacs.d/" ".zsh_history" ".nix-defexpr/" ".gitlibs/" ".nvidia-settings-rc" "boot/" "python-stuff/" ".erc/" ".pki/" ".local/" ".aws/" ".zshrc.pre-oh-my-zsh" ".nvm/" ".config/" ".gnome/" "spacemacs-dark-theme.el" ".sdkman/" ".nginx/" ".bash_history" "images/" "Downloads/" "spacemacs-common.el" "Public/" "Videos/" "javasharedresources/" ".zcompdump" ".gitconfig" "golang-stuff/")
+
+ ("/home/saadg/python-stuff/tornado01/" (24432 17596 622911 626000) "../" "./" "bin/" "lib64/" "status.py" "include/" "share/" "lib/" "api.py" "pyvenv.cfg" "drone.py" "__pycache__/")
+
+ ("/home/saadg/.emacs.d/themes/" (24422 61744 436667 994000) "tomorrow-theme.el" "tomorrow-night-bright-theme.el" "../" "./" "tomorrow-night-theme.el" "color-theme-tomorrow.el" "tomorrow-night-eighties-theme.el" "zenburn-theme.el" "tomorrow-night-blue-theme.el")
+
+ ("/home/saadg/.emacs.d/customizations/" (24432 15432 564960 481000) "6502-mode.el" "ui.el" "editing.el" "../" "./" "go-eldoc.el" "restclient.el" "misc.el" "go-complete.el" "python-setup.el" "go-setup.el" "navigation.el" "go-projectile.el" "setup-js.el" "ace-window.el" "shell-integration.el" "elisp-editing.el" "setup-clojure.el" "avy.el")
+
+ ("/home/saadg/.emacs.d/" (24432 15350 598282 546000) ".gitignore" "../" ".lsp-session-v1" "./" "snippets/" "auto-save-list/" "elpa/" "backups/" "elpy/" "customizations/" ".smex-items" ".recentf" "ac-comphist.dat" "init.el" "README.md" "projectile-bookmarks.eld" "themes/" ".mc-lists.el" ".git/" "cider-history" "ido.last")
+
+ ("/home/saadg/python-stuff/python-web/" (24431 38047 137462 988000) "../" "./" "index.py" "index.html" "__pycache__/")
+
+ ("/home/saadg/python-stuff/" (24431 41027 662790 147000) "../" "./" "tornado01/" "python-web/")
+
+ ("/home/saadg/.ipython/profile_default/startup/" (24431 19329 389150 698000) "../" "./" "00-ipython_init.py" "README")
+
+ ("/home/saadg/.ipython/profile_default/" (24431 19204 514850 542000) "history.sqlite" "../" "./" "startup/" "security/" "pid/" "db/" "log/")
+
+ ("/home/saadg/.ipython/" (24429 58267 106802 174000) "../" "./" "extensions/" "profile_default/" "nbextensions/")
+
+ ("/home/saadg/omaposti/omaposti-auth-service/config/nginx/" (24430 16137 303992 309000) "nginx.conf" "../" "./" "certs/" "nginx.tmpl" "log/")
+
+ ("/home/saadg/omaposti/omaposti-auth-service/bin/" (24430 16073 373014 763000) "../" "./" "launch-just-externals" "generate-config-files")
+
+ ("/home/saadg/omaposti/omaposti-auth-service/config/docker/" (24430 15505 974080 559000) "../" "docker-compose.ci.yml" "./" "bin/" "docker-compose.yml" "docker-compose.base.yml" "auth-test-service.Dockerfile" "docker-compose.base.tmpl" "Dockerfile" "docker-compose.local.yml")
+
+ ("/home/saadg/omaposti/omaposti-auth-service/config/env/" (24430 14196 310969 368000) "../" "./" "local_dev_oneaccount" "local_dev_keycloak" "local_redis" "linux_osx_docker_configs" "local_dev_oneaccount.tmpl" "testing")
+
+ ("/home/saadg/omaposti/omaposti-auth-service/config/" (24427 18718 631517 625000) "../" "./" "redis/" "docker/" "keys/" "nginx/" "env/")
+
+ ("/home/saadg/omaposti/omaposti-auth-service/" (24429 52663 784089 679000) "scripts/" ".gitignore" ".coverage" ".hypothesis/" "../" "./" ".editorconfig" "bin/" "auth-test-service/" ".dockerignore" "docs/" "requirements.txt" "pyproject.toml" "tox.ini" "requirements_dev.in" "realm-export.json" "tests/" "requirements_dev.txt" ".tox/" "Makefile" "README.md" "requirements.in" ".circleci/" ".git/" "reports/" "config/" "src/" ".github/" "CONTRIBUTING.md")
+
+ ("/home/saadg/omaposti/omaposti-auth-service/src/auth/" (24429 37535 280208 603000) "config.py" "models/" "logger.py" "../" "./" "api/" "tokens.py" "constants.py" "api_doc.py" "utils/" "integration/" "__init__.py" "services/" "mixins.py" "main.py" "__pycache__/")
+
+ ("/home/saadg/omaposti/omaposti-auth-service/src/auth/api/v1/" (24429 37535 280208 603000) "authentication/" "../" "handlers.py" "./" "__init__.py" "health/" "__pycache__/")
+
+ ("/home/saadg/omaposti/omaposti-auth-service/src/auth/api/v1/authentication/" (24429 43011 443648 806000) "../" "./" "oidc_login_handler.py" "jwks_json_handler.py" "revoke_handler.py" "openid_configuration_handler.py" "oidc_logout_handler.py" "oidc_mobile_login_handler.py" "__init__.py" "oidc_token_handler.py" "is_revoked_handler.py" "oidc_callback_handler.py" "user_info_handler.py" "oidc_refresh_tokens_handler.py" "__pycache__/")
+
+ ("/home/saadg/omaposti/omaposti-auth-service/src/" (24425 48388 448293 267000) "../" "./" "__main__.py" "__init__.py" "auth/")
+
+ ("/home/saadg/omaposti/omaposti-auth-service/src/auth/api/" (24427 18718 635517 574000) "../" "handlers.py" "./" "decorators/" "v1/" "__init__.py" "default_handler.py" "base_handler.py" "__pycache__/")
+
+ ("/home/saadg/omaposti/mobile-backend/graphql-apigw/" (24426 23191 929711 413000) "scripts/" ".gitignore" "../" "./" "resources/" "stamps/" "Makefile" "tests.edn" ".cpcache/" "test/" "deps.edn" ".clj-kondo/" "Dockerfile" ".dir-locals.el" "target/" "src/" "dev/")
+
+ ("/home/saadg/omaposti/" (24425 48386 612320 728000) "../" "./" "mobile-backend/" "omaposti-vpn/" "omaposti-auth-service/" "cloud-infra-team/")
+
+ ("/home/saadg/omaposti/mobile-backend/graphql-apigw/dev/src/" (24421 1171 284389 827000) "../" "./" "user.clj")
+
+ ("/home/saadg/omaposti/mobile-backend/graphql-apigw/resources/" (24421 1171 284389 827000) "schema/" "../" "./" "public/" "graphiql/" "config.edn" "keys/" "META-INF/")
+
+ ("/home/saadg/omaposti/mobile-backend/graphql-apigw/dev/" (24421 1171 284389 827000) "../" "./" "resources/" "src/")
+
+ ("/home/saadg/omaposti/mobile-backend/graphql-apigw/dev/resources/" (24421 1171 284389 827000) "../" "./" "dev-config.edn")
+
+ ("/home/saadg/nginx-stuff/site2/" (24425 79 971756 119000) "../" "./")
+
+ ("/home/saadg/nginx-stuff/" (24425 79 971756 119000) "../" "./" "site2/" "index.html" "site1/")
+
+ ("/home/saadg/nginx-stuff/site1/" (24425 99 951455 109000) "../" "./" "index.html")
+
+ ("/home/saadg/.nginx/" (24424 62142 20510 718000) "nginx.conf" "../" "./")
+
+ ("/home/saadg/omaposti/mobile-backend/" (24421 1171 312389 621000) "backend-service/" ".gitignore" "../" "./" "docs/" "aftership-service/" "ldap-mock/" "vendor/" "graphql-apigw/" "Makefile" "README.md" "lib/" ".circleci/" "posti-mock/" ".git/" ".github/" "CONTRIBUTING.md" "CHANGELOG.md" "redis-mock/")
+
+ ("/home/saadg/omaposti/mobile-backend/backend-service/" (24421 2671 860692 334000) "scripts/" "../" "./" "resources/" "stamps/" "Makefile" "tests.edn" ".cpcache/" "specs/" "test/" "deps.edn" ".clj-kondo/" "Dockerfile" ".dir-locals.el" "target/" "src/" "dev/")
+
+ ("/home/saadg/omaposti/mobile-backend/backend-service/src/" (24421 1171 280389 858000) "../" "tracking_service/" "./" "migrations/" "payment_service/" "user_service/" "auth_service/" "netposti_service/" "backend/" "notify_service/")
+
+ ("/home/saadg/omaposti/mobile-backend/backend-service/src/user_service/" (24421 1171 280389 858000) "sql/" "user_event.clj" "../" "./" "migrations/" "soap.clj" "sql.clj" "handler.clj" "fallback_cache.clj" "client/" "health_testers.clj" "transform.clj" "middleware.clj" "unregister.clj")
+
+ ("/home/saadg/golang-stuff/golang-arch/" (24423 14782 908076 27000) ".gitignore" "../" "./" "go.mod" "main.go" "go.sum" ".git/" "LICENSE")
+
+ ("/home/saadg/golang-stuff/golang-arch/.git/" (24423 6153 333688 708000) "../" "./" "info/" "objects/" "logs/" "packed-refs" "description" "hooks/" "HEAD" "index" "COMMIT_EDITMSG" "branches/" "config" "refs/")
+
+ ("/home/saadg/go/" (24421 50846 115891 387000) "../" "./" "pkg/" "bin/" "src/")
+
+ ("/home/" (24420 49587 656577 887000) "../" "./" "saadg/")
+
+ ("/home/saadg/golang-stuff/" (24422 64842 365527 533000) "../" "./" "golang-arch/")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

@@ -13,6 +13,17 @@
 ;; This also sets the load path.
 (package-initialize)
 
+(setq use-package-always-ensure nil)
+
+(unless (require 'use-package nil t)
+  (if (not (yes-or-no-p (concat "Refresh packages, install use-package and"
+                                " other packages used by init file? ")))
+      (error "you need to install use-package first")
+    (package-refresh-contents)
+    (package-install 'use-package)
+    (require 'use-package)
+    (setq use-package-always-ensure t)))
+
 ;; Download the ELPA archive description if needed.
 ;; This informs Emacs about the latest versions of all packages, and
 ;; makes them available for download.
@@ -127,9 +138,20 @@
 ;; For editing lisps
 (load "elisp-editing.el")
 
-;; Langauage-specific
+;; Language-specific
 (load "setup-clojure.el")
 (load "setup-js.el")
+
+;; Golang
+(load "go-setup.el")
+
+;; Python3
+(use-package elpy
+  :ensure t
+  :init
+  (elpy-enable))
+(load "python-setup.el")
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -137,9 +159,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(coffee-tab-width 2)
+ '(custom-safe-themes
+   '("fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "7f1263c969f04a8e58f9441f4ba4d7fb1302243355cb9faecb55aec878a06ee9" "9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" default))
  '(global-eldoc-mode nil)
  '(package-selected-packages
-   '(go-autocomplete go-mode restclient-test helm-projectile ivy helm-core helm-mode-manager ## avy ace-window magit tagedit rainbow-delimiters projectile smex ido-completing-read+ cider clojure-mode-extra-font-locking clojure-mode paredit exec-path-from-shell))
+   '(jedi dockerfile-mode doom-themes ewal-spacemacs-themes jupyter ein blackboard-theme drag-stuff py-autopep8 python-black kivy-mode autopair company-go go-rename go-guru use-package go-autocomplete go-mode restclient-test helm-projectile ivy helm-core helm-mode-manager ## avy ace-window magit tagedit rainbow-delimiters projectile smex ido-completing-read+ cider clojure-mode-extra-font-locking clojure-mode paredit exec-path-from-shell))
  '(safe-local-variable-values
    '((cider-clojure-cli-global-options . "-A:dev:test:eastwood"))))
 (custom-set-faces
@@ -161,7 +185,6 @@
 (global-unset-key (kbd "M-<down-mouse-1>"))
 (global-set-key (kbd "M-<mouse-1>") 'mc/add-cursor-on-click)
 
-(set-face-attribute 'default nil :height 170)
 
 (global-company-mode)
 
@@ -196,7 +219,7 @@
 
 (setq projectile-completion-system 'ivy)
 
-(setq projectile-project-search-path '("~/posti-stuff/mobile-backend" "~/go-code/client"))
+(setq projectile-project-search-path '("~/omaposti/mobile-backend/backend-service" "~/omaposti/mobile-backend/graphql-apigw" "~/golang-stuff" "~/golang-stuff/oauth-project"))
 
 (setq projectile-switch-project-action #'projectile-find-dir)
 
@@ -206,45 +229,38 @@
 
 (require 'restclient)
 
-;; Go configuration
-;; function for loading the PATH environment
-;; courtesy of: https://tleyden.github.io/blog/2014/05/22/configure-emacs-as-a-go-editor-from-scratch/
 
-(defun set-exec-path-from-shell-PATH ()
-  (let ((path-from-shell (replace-regexp-in-string
-                          "[ \t\n]*$"
-                          ""
-                          (shell-command-to-string "$SHELL --login -i -c 'echo $PATH'"))))
-    (setenv "PATH" path-from-shell)
-    (setq eshell-path-env path-from-shell) ; for eshell users
-    (setq exec-path (split-string path-from-shell path-separator))))
+(setenv "JAVA_HOME"
+        "/home/saadg/.sdkman/candidates/java/current")
 
-(when window-system (set-exec-path-from-shell-PATH))
-
-;; GOPATH
-(setenv "GOPATH" "/home/saadg/go-code")
-
-;; Call gofmt on save and set key bindings fo Godef
-(add-to-list 'exec-path "/home/saadg/go-code/bin")
-
-(defun my-go-mode-hook ()
-                                        ; Call gofmt before saving
-  (add-hook 'before-save-hook 'gofmt-before-save)
-                                        ;(local-set-key (kbd "M-.") 'godef-jump)
-  (local-set-key (kbd "M-*") 'pop-tag-mark)
-  )
-(add-hook 'go-mode-hook 'my-go-mode-hook)
-
-;; Go autocomplete
-(defun auto-complete-for-go ()
-  (auto-complete-mode 1))
-(add-hook 'go-mode-hook 'auto-complete-for-go)
-
-(with-eval-after-load 'go-mode
-  (require 'go-autocomplete))
+(setenv "JAVA_CMD"
+        "/home/saadg/.sdkman/candidates/java/current/bin/java")
 
 
+;; Ivy completion
+;; https://github.com/abo-abo/swiper
+(ivy-mode 1)
+(define-key ivy-minibuffer-map (kbd "S-<up>") #'ivy-previous-history-element)
+(define-key ivy-minibuffer-map (kbd "S-<down>") #'ivy-next-history-element)
 
+;; Terraform
+;; https://github.com/emacsorphanage/terraform-mode
+(require 'terraform-mode)
+(add-to-list 'auto-mode-alist '("\\.tf\\'" . terraform-mode))
+(add-hook 'terraform-mode-hook #'terraform-format-on-save-mode)
 
+;; YAML
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.ya?ml\\'" . yaml-mode))
+
+(drag-stuff-mode t)
+(drag-stuff-global-mode 1)
+(drag-stuff-define-keys)
+
+(use-package multiple-cursors
+  :ensure t
+  :bind (("M-." . mc/mark-next-like-this)
+         ("M-," . mc/unmark-next-like-this)
+         ("C-S-<mouse-1>" . mc/add-cursor-on-click)))
 
 ;;init.el ends here
